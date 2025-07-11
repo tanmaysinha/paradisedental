@@ -1,2 +1,2 @@
-# unitedsmilealliance
-Website for dental group
+# paradisedental
+Website for Paradise Dental
