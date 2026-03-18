@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=1200">
-  <title>OG Card – Paradise Dental</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OG Card — Paradise Dental</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -13,234 +13,84 @@
       height: 630px;
       overflow: hidden;
       font-family: 'Inter', sans-serif;
-      background: #ffffff;
-    }
-
-    .card {
-      width: 1200px;
-      height: 630px;
-      position: relative;
-      display: flex;
-      align-items: center;
-      background: #ffffff;
-      overflow: hidden;
-    }
-
-    /* Green radial blobs */
-    .blob-tl {
-      position: absolute;
-      top: -80px; left: -80px;
-      width: 500px; height: 500px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(16,185,129,0.22) 0%, transparent 70%);
-      pointer-events: none;
-    }
-    .blob-br {
-      position: absolute;
-      bottom: -120px; right: -60px;
-      width: 480px; height: 480px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(21,128,61,0.18) 0%, transparent 70%);
-      pointer-events: none;
-    }
-    .blob-mid {
-      position: absolute;
-      top: 50%; right: 220px;
-      transform: translateY(-50%);
-      width: 300px; height: 300px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(16,185,129,0.10) 0%, transparent 70%);
-      pointer-events: none;
-    }
-
-    /* Left content pane */
-    .left {
-      position: relative;
-      z-index: 2;
-      flex: 1;
-      padding: 0 72px;
+      background-color: #ffffff;
+      background-image:
+        radial-gradient(ellipse at 10% 30%, rgba(16,185,129,0.22) 0%, transparent 55%),
+        radial-gradient(ellipse at 90% 10%, rgba(21,128,61,0.20) 0%, transparent 50%),
+        radial-gradient(ellipse at 50% 95%, rgba(16,185,129,0.15) 0%, transparent 50%);
       display: flex;
       flex-direction: column;
       justify-content: center;
-      gap: 0;
+      padding: 80px 100px;
     }
 
     .pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      background: rgba(16,185,129,0.10);
-      border: 1px solid rgba(16,185,129,0.30);
+      display: inline-block;
+      background: rgba(16,185,129,0.12);
+      border: 1.5px solid rgba(16,185,129,0.3);
       color: #15803d;
       border-radius: 9999px;
-      padding: 6px 18px;
-      font-size: 13px;
+      padding: 6px 20px;
+      font-size: 14px;
       font-weight: 600;
       letter-spacing: 0.04em;
-      text-transform: uppercase;
+      margin-bottom: 28px;
       width: fit-content;
-      margin-bottom: 24px;
-    }
-    .pill-dot {
-      width: 7px; height: 7px;
-      border-radius: 50%;
-      background: #10b981;
     }
 
     h1 {
       font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 80px;
       font-weight: 800;
-      font-size: 54px;
-      line-height: 1.08;
-      color: #0f172a;
+      line-height: 1.05;
       letter-spacing: -0.02em;
-      margin-bottom: 20px;
+      color: #0f172a;
+      margin-bottom: 24px;
     }
+
     h1 span {
-      background: linear-gradient(135deg, #15803d, #10b981);
+      background: linear-gradient(90deg, #15803d, #10b981);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
     }
 
-    .tagline {
-      font-size: 18px;
-      font-weight: 400;
-      color: #475569;
-      line-height: 1.55;
-      max-width: 420px;
-      margin-bottom: 36px;
-    }
-
-    .badges {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
-    .badge {
-      display: flex;
-      align-items: center;
-      gap: 7px;
-      background: #f0fdf4;
-      border: 1px solid #dcfce7;
-      border-radius: 10px;
-      padding: 8px 16px;
-      font-size: 13.5px;
-      font-weight: 600;
-      color: #15803d;
-    }
-    .badge svg { flex-shrink: 0; }
-
-    /* Divider */
-    .divider-v {
-      position: relative;
-      z-index: 2;
-      width: 1px;
-      height: 340px;
-      background: linear-gradient(180deg, transparent 0%, #dcfce7 20%, #dcfce7 80%, transparent 100%);
-      flex-shrink: 0;
-    }
-
-    /* Right pane */
-    .right {
-      position: relative;
-      z-index: 2;
-      width: 380px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 28px;
-      padding: 0 56px;
-    }
-
-    .logo-wrap {
-      width: 120px;
-      height: 120px;
-      border-radius: 28px;
-      background: linear-gradient(145deg, #f0fdf4, #dcfce7);
-      border: 1.5px solid #bbf7d0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 8px 32px rgba(21,128,61,0.14);
-    }
-    .logo-wrap img {
-      width: 80px;
-      height: 80px;
-      object-fit: contain;
-    }
-
-    .right-info {
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-    }
-    .right-name {
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      font-weight: 800;
+    p {
       font-size: 22px;
-      color: #0f172a;
-      letter-spacing: -0.01em;
-      line-height: 1.2;
-    }
-    .right-sub {
-      font-size: 13px;
-      font-weight: 500;
       color: #64748b;
+      line-height: 1.5;
+      max-width: 680px;
+      margin-bottom: 40px;
     }
 
+    .footer {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #15803d, #10b981);
+    }
+
+    .url {
+      font-size: 16px;
+      font-weight: 500;
+      color: #94a3b8;
+      letter-spacing: 0.01em;
+    }
   </style>
 </head>
 <body>
-<div class="card">
-  <div class="blob-tl"></div>
-  <div class="blob-br"></div>
-  <div class="blob-mid"></div>
-
-  <!-- Left -->
-  <div class="left">
-    <div class="pill">
-      <span class="pill-dot"></span>
-      Philadelphia, PA
-    </div>
-
-    <h1>Family &amp;<br><span>Dental Care</span></h1>
-
-    <p class="tagline">Proudly serving Kensington &amp; Fishtown for over a decade with quality, affordable dental care.</p>
-
-    <div class="badges">
-      <div class="badge">
-        <svg width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="#15803d" stroke-width="2.2">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
-        </svg>
-        New Patients Welcome
-      </div>
-      <div class="badge">
-        <svg width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="#15803d" stroke-width="2.2">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"/>
-        </svg>
-        Most Insurance Accepted
-      </div>
-    </div>
+  <div class="pill">Kensington &amp; Fishtown, Philadelphia</div>
+  <h1>Paradise<br><span>Dental</span></h1>
+  <p>Quality, affordable dental care for the whole family. New patients welcome.</p>
+  <div class="footer">
+    <div class="dot"></div>
+    <span class="url">www.dentalparadisefamily.com</span>
   </div>
-
-  <!-- Vertical divider -->
-  <div class="divider-v"></div>
-
-  <!-- Right -->
-  <div class="right">
-    <div class="logo-wrap">
-      <img src="assets/images/usa_logo.png" alt="Paradise Dental Logo">
-    </div>
-
-    <div class="right-info">
-      <div class="right-name">Paradise Dental<br>Philadelphia</div>
-      <div class="right-sub">Kensington &amp; Fishtown</div>
-    </div>
-
-  </div>
-</div>
 </body>
 </html>
