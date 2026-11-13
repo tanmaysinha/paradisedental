@@ -51,6 +51,32 @@
     }
     .cta-btn:hover { opacity: 0.88; transform: scale(1.03); }
 
+    .phone-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 700;
+      color: #15803d;
+      white-space: nowrap;
+      transition: opacity 0.2s;
+    }
+    .phone-link:hover { opacity: 0.75; }
+
+    .call-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      background: #ffffff;
+      border: 2px solid #15803d;
+      color: #15803d;
+      font-weight: 700;
+      border-radius: 9999px;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .call-btn:hover { background: #f0fdf4; transform: scale(1.03); }
+
     .pill-tag {
       display: inline-block;
       background: rgba(16,185,129,0.1);
@@ -118,14 +144,16 @@
 <body>
 
   <!-- Header -->
-  <header class="flex items-center justify-between px-8 py-5 bg-white border-b border-gray-100 sticky top-0 z-20" style="backdrop-filter:blur(8px);">
+  <header class="flex items-center justify-between px-5 md:px-8 py-5 bg-white border-b border-gray-100 sticky top-0 z-20" style="backdrop-filter:blur(8px);">
     <a href="#" class="heading font-bold text-lg" style="color:#0f172a; letter-spacing:-0.01em;">Paradise Dental</a>
     <nav class="hidden md:flex items-center space-x-8">
       <a href="#dentist" class="nav-link">Our Dentist</a>
       <a href="#contact" class="nav-link">Contact</a>
+      <a href="tel:2678869474" class="phone-link text-base" aria-label="Call Paradise Dental at 267-886-9474"><svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>267-886-9474</a>
       <a href="book-appointment/" class="cta-btn">Book Appointment</a>
     </nav>
-    <div class="md:hidden">
+    <div class="md:hidden flex items-center gap-4">
+      <a href="tel:2678869474" class="phone-link text-sm" aria-label="Call Paradise Dental at 267-886-9474"><svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>267-886-9474</a>
       <button onclick="toggleMenu()" class="focus:outline-none text-gray-500 hover:text-green-700">
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
@@ -138,6 +166,7 @@
     <a href="#dentist" class="block nav-link py-2">Our Dentist</a>
     <a href="#contact" class="block nav-link py-2">Contact</a>
     <a href="book-appointment/" class="block cta-btn my-2">Book Appointment</a>
+    <a href="tel:2678869474" class="call-btn w-full py-2 text-sm"><svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>Call 267-886-9474</a>
   </div>
 
   <!-- Hero -->
@@ -150,7 +179,10 @@
     <p class="max-w-2xl mx-auto text-base md:text-lg leading-relaxed text-gray-500">
       Proudly serving the Kensington and Fishtown communities for over a decade by providing quality, affordable dental care right in the neighborhood.
     </p>
-    <a href="book-appointment/" class="mt-10 cta-btn text-base px-8 py-3">Book Appointment</a>
+    <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+      <a href="book-appointment/" class="cta-btn text-base px-8 py-3">Book Appointment</a>
+      <a href="tel:2678869474" class="call-btn text-base px-8 py-3"><svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>Call 267-886-9474</a>
+    </div>
   </section>
 
   <!-- Meet Our Dentist -->
@@ -193,7 +225,7 @@
             <div class="icon-circle">
               <svg class="w-4 h-4" fill="none" stroke="#15803d" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
             </div>
-            <a href="tel:2678869474" class="hover:underline" style="color:#15803d;">267-886-9474</a>
+            <a href="tel:2678869474" class="hover:underline heading text-lg font-bold" style="color:#15803d;">267-886-9474</a>
           </div>
           <div class="flex items-center gap-3">
             <div class="icon-circle">
